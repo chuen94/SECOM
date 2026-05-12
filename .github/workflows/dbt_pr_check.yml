@@ -1,0 +1,48 @@
+name: dbt Data quality check
+
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-dbt-models:
+    name: Run dbt Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dbt-snowflake
+        run: pip install dbt-snowflake==1.8.0
+
+      - name: Create dbt profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat << EOF > ~/.dbt/profiles.yml
+          secom_pj:
+            target: ci
+            outputs:
+              ci:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: SECOM_MFG
+                warehouse: COMPUTE_WH
+                schema: CI_CD_TEST # Temporary schema just for testing!
+                threads: 4
+          EOF
+
+      - name: Run dbt build
+        run: |
+          cd secom_pj
+          dbt build --target ci

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_secom_sensors_cleaned
+    description: "The cleaned and imputed SECOM manufacturing dataset, ready for ML."
+    columns:
+      - name: classification
+        description: "Pass/Fail label for the manufacturing run."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [-1, 1] 
+
+      - name: record_timestamp
+        description: "The exact time the wafer was tested."
+        tests:
+          - not_null

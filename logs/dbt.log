@@ -1,0 +1,55 @@
+[0m14:56:04.587440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C76315D940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C760AC07D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C76549B9D0>]}
+
+
+============================== 14:56:04.594789 | 8904b273-8b77-481f-9823-287b3b14dc71 ==============================
+[0m14:56:04.594789 [info ] [MainThread]: Running with dbt=1.11.9
+[0m14:56:04.595544 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\awang\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt init SECOM', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:56:04.614630 [debug] [MainThread]: Starter project path: C:\Users\awang\Documents\Analytic_project\SECOM\venv\Lib\site-packages\dbt\include\starter_project
+[0m14:56:04.636126 [info ] [MainThread]: 
+Your new dbt project "SECOM" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:56:04.636613 [info ] [MainThread]: Setting up your profile.
+[0m14:56:13.338073 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:56:13.338853 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:56:13.339091 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:58:03.955176 [info ] [MainThread]: Profile SECOM written to C:\Users\awang\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:58:03.956582 [debug] [MainThread]: Command `dbt init` succeeded at 14:58:03.956452 after 119.49 seconds
+[0m14:58:03.956859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C70107E520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C700569FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C76543B020>]}
+[0m14:58:03.957122 [debug] [MainThread]: Flushing usage events
+[0m14:58:04.418435 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:58:23.585314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C04411D940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C041A907D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C04645B9D0>]}
+
+
+============================== 14:58:23.591597 | aa9bb9d7-23e6-42cd-a15c-2da0d2e75b39 ==============================
+[0m14:58:23.591597 [info ] [MainThread]: Running with dbt=1.11.9
+[0m14:58:23.592081 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\awang\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:58:23.604144 [info ] [MainThread]: dbt version: 1.11.9
+[0m14:58:23.604550 [info ] [MainThread]: python version: 3.14.4
+[0m14:58:23.604879 [info ] [MainThread]: python path: C:\Users\awang\Documents\Analytic_project\SECOM\venv\Scripts\python.exe
+[0m14:58:23.605348 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m14:58:24.149078 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:58:24.149460 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:58:24.149691 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:58:24.194155 [info ] [MainThread]: Using profiles dir at C:\Users\awang\.dbt
+[0m14:58:24.194777 [info ] [MainThread]: Using profiles.yml file at C:\Users\awang\.dbt\profiles.yml
+[0m14:58:24.195076 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\awang\Documents\Analytic_project\SECOM\dbt_project.yml
+[0m14:58:24.195589 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:58:24.196672 [debug] [MainThread]: Command `dbt debug` failed at 14:58:24.196566 after 0.73 seconds
+[0m14:58:24.196932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0620029E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C061F8EE70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0620E47C0>]}
+[0m14:58:24.197185 [debug] [MainThread]: Flushing usage events
+[0m14:58:24.595675 [debug] [MainThread]: An error was encountered while trying to flush usage events
