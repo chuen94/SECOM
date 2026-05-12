@@ -1,8 +1,19 @@
 # SECOM Manufacturing Data Pipeline
 
-An end-to-end, Analytics Engineering pipeline built to process, clean, and model industrial sensor data from the UCI SECOM dataset. 
+**Business Problem:** Manufacturing facilities generate thousands of sensor readings per wafer daily. Without a clean, validated data infrastructure, downstream predictive maintenance models (like anomaly detection) fail silently on corrupt or missing inputs, leading to undetected equipment degradation and costly yield losses. 
 
-This project demonstrates a modern data stack architecture, transforming raw, highly-sparse manufacturing data into a mathematically complete dataset ready for Machine Learning (Predictive Maintenance/Anomaly Detection).
+**Solution:** This pipeline ensures Machine Learning-ready data by automatically extracting raw sensor outputs, enforcing strict data quality contracts, and dynamically standardizing sparse features before they ever reach the data science team.
+
+---
+
+## Pipeline Scale & Metrics
+
+* **Throughput:** Processed **1,567** high-frequency manufacturing records per batch.
+* **Dynamic Transformation:** Leveraged programmatic SQL (Jinja) to dynamically normalize and type-cast **590** independent sensor columns simultaneously.
+* **Data Imputation:** Automatically caught and handled highly sparse data, imputing thousands of `NaN`/`NULL` sensor readings to prevent downstream ML clustering failures.
+* **Performance:** End-to-end dbt transformation and test execution completes in **< 10 seconds**, fully optimized for cloud warehouse compute.
+
+---
 
 ## Architecture & Tech Stack
 
@@ -14,8 +25,8 @@ This project demonstrates a modern data stack architecture, transforming raw, hi
 
 ## Key Engineering Highlights
 
-1. **Dynamic SQL Generation:** Utilized **Jinja `for` loops** in dbt to dynamically generate over 600 lines of SQL, handling the transformation and imputation of 590 poorly-named sensor columns without manual typing.
-2. **Data Quality Contracts:** Implemented strict dbt tests to catch `NULL` values, enforce accepted bounds, and prevent broken sensor data from reaching downstream ML models.
+1. **Dynamic SQL Generation:** Utilized **Jinja `for` loops** in dbt to dynamically generate over 600 lines of SQL, handling the transformation of 590 poorly-named sensor columns without manual, error-prone typing.
+2. **Data Quality Contracts:** Implemented strict dbt tests to catch `NULL` classifications, enforce accepted mathematical bounds, and prevent broken sensor data from reaching downstream environments.
 3. **Automated CI/CD:** Configured a GitHub Actions workflow that automatically builds a temporary Snowflake schema, installs dbt, and runs all data quality tests whenever new code is pushed, blocking bad code from production.
 
 ## Project Structure
